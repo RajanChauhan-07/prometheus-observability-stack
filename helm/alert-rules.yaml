@@ -1,0 +1,41 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: prometheus-stack-alerts
+  namespace: monitoring
+  labels:
+    release: prometheus-stack
+spec:
+  groups:
+    - name: cpu-alerts
+      rules:
+        - alert: HighCPUUsage
+          expr: (sum(rate(container_cpu_usage_seconds_total{namespace="default"}[2m])) / sum(machine_cpu_cores)) * 100 > 50
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High CPU Usage Detected"
+            description: "CPU usage is above 50% for more than 1 minute"
+
+    - name: memory-alerts
+      rules:
+        - alert: HighMemoryUsage
+          expr: (sum(container_memory_working_set_bytes{namespace="default"}) / sum(machine_memory_bytes)) * 100 > 50
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High Memory Usage Detected"
+            description: "Memory usage is above 50% for more than 1 minute"
+
+    - name: pod-alerts
+      rules:
+        - alert: PodCrashLooping
+          expr: rate(kube_pod_container_status_restarts_total{namespace="default"}[5m]) * 60 * 5 > 0
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Pod is crash looping"
+            description: "Pod {{ $labels.pod }} is crash looping"

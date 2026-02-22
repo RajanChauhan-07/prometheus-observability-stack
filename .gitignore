@@ -1,0 +1,17 @@
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+
+# AWS credentials
+.aws/
+credentials
+
+# Mac files
+.DS_Store
+
+# Misc
+*.log
+*.tmp
