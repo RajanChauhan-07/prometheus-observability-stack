@@ -102,5 +102,5 @@ terraform destroy
 
 ![Grafana Dashboard](![WhatsApp Image 2026-02-22 at 13 01 42](https://github.com/user-attachments/assets/f8a5633c-287b-41e0-8d9c-e1993d98918f)
 )
-![AlertManager](<img width="1280" height="799" alt="image" src="https://github.com/user-attachments/assets/c54a2760-1ede-40a4-9f19-d7f50b796716" />
+![AlertManager](![WhatsApp Image 2026-02-22 at 13 13 40](https://github.com/user-attachments/assets/cc27a2f0-e75a-403a-a28e-27053865897a)
 )
