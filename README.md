@@ -100,5 +100,7 @@ terraform destroy
 
 ## 📸 Screenshots
 
-![Grafana Dashboard](screenshots/grafana-dashboard.png)
-![AlertManager](screenshots/alertmanager.png)s
+![Grafana Dashboard](<img width="1280" height="799" alt="image" src="https://github.com/user-attachments/assets/392a6d72-8c32-4d4a-82c6-11d129467f56" />
+)
+![AlertManager](<img width="1280" height="799" alt="image" src="https://github.com/user-attachments/assets/c54a2760-1ede-40a4-9f19-d7f50b796716" />
+)
